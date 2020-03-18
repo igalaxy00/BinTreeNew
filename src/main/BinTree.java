@@ -61,6 +61,13 @@ public class BinTree {
         return find(key).parent.key;
     }
 
+    private void replaceChild(Node current){
+        if (current.leftChild != null)
+            newElement(current.leftChild.key);
+        if (current.rightChild != null)
+            newElement(current.rightChild.key);
+    }
+
     public void removeElement(int key) {
         Node current = find(key);
         Node cParent = current.parent;
@@ -68,14 +75,7 @@ public class BinTree {
             cParent.rightChild = null;
         } else
             cParent.leftChild = null;
-
-        if (current.leftChild != null) {
-            newElement(current.leftChild.key);
-        }
-
-        if (current.rightChild != null) {
-            newElement(current.rightChild.key);
-        }
+        replaceChild(current);
         nodes.remove(current);
     }
 
