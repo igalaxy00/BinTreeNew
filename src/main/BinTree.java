@@ -9,10 +9,10 @@ public class BinTree {
     public Node root= null;
 
     public Node find(int key) {
-            for (Node current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild) {
+            for (Node current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
                 if (key == current.key)
                     return current;
-            }
+
         throw new NullPointerException("Такого узла нет");
         }
 
