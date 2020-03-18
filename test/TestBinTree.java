@@ -28,6 +28,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertEquals(theTree.find(105).parent.key,104);//проверка предка у случайного узла
         assertEquals(theTree.find(104).leftChild.key,103);//проверка левого потомка  у случайного узла
         assertEquals(theTree.find(104).rightChild.key,105);//проверка правого потомка  у случайного узла
-        assertThrows(NullPointerException.class, () -> theTree.find(2));
+        assertThrows(NullPointerException.class, () -> theTree.find(999999999));
     }
 }
