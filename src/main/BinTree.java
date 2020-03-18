@@ -4,8 +4,10 @@ import java.util.*;
 
 
 public class BinTree {
+
     private ArrayList<Node> nodes = new ArrayList<>();
     public Node root= null;
+
     public Node find(int key) {
         Node current;
             for (current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
@@ -16,6 +18,7 @@ public class BinTree {
     public boolean isEmpty(){
         return root==null;
 }
+
     //добавление элемента
     public boolean newElement(int key) {
         Node node = new Node();
