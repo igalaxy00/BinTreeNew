@@ -7,14 +7,15 @@ public class BinTree {
     private ArrayList<Node> nodes = new ArrayList<>();
     public Node root= null;
     public Node find(int key) {
-            for (Node current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
+        Node current;
+            for (current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
                 if (key == current.key)
                     return current;
         throw new NullPointerException("Такого узла нет");
         }
     public boolean isEmpty(){
         return root==null;
-    }
+}
     //добавление элемента
     public boolean newElement(int key) {
         Node node = new Node();
@@ -69,13 +70,11 @@ public class BinTree {
             cParent.leftChild = null;
 
         if (current.leftChild != null) {
-            Node leftOne = current.leftChild;
-            newElement(leftOne.key);
+            newElement(current.leftChild.key);
         }
 
         if (current.rightChild != null) {
-            Node rightOne = current.rightChild;
-            newElement(rightOne.key);
+            newElement(current.rightChild.key);
         }
         nodes.remove(current);
     }
