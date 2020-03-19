@@ -1,6 +1,5 @@
 import BinTreeF.BinTree;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,15 +15,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         theTree.newElement(103);
         theTree.newElement(105);
         theTree.newElement(4);
-        assertEquals(theTree.nodes.get(1).key,100);//проверка того как заполняется массив
+        assertEquals(theTree.nodes.get(1).key,100);//проверка того как заполняется массив с узлами
         assertTrue(theTree.newElement(1));//проверка успешно ли добавляютя элементы
+        theTree.newElement(-1);
+        theTree.newElement(2);
         assertEquals(theTree.root.key, 55);//проверки связанные с корнем
         assertEquals(theTree.root.leftChild.key, 4);
         assertEquals(theTree.root.rightChild.key, 100);
         assertEquals(theTree.find(theTree.root.key).key,55);
         assertEquals(theTree.find(4).key,4);
+        assertEquals(theTree.find(-1).parent.key,1);
+        assertEquals(theTree.find(2).key,2);
         theTree.removeElement(4);//проверка на удаление элемента
-        assertEquals(theTree.find(1).key,1);//проверка того что происходит с узлами предка которых удалили
+        assertEquals(theTree.find(1).key,1);//проверка того что происходит с узлами, предка которых удалили
+        assertEquals(theTree.find(1).leftChild.key,-1);//проверка что происходит с левым потомком узла, предка которых удалили
+        assertEquals(theTree.find(1).rightChild.key,2);//проверка что происходит с правым потомком узла, предка которых удалили
+        assertEquals(theTree.find(2).parent.key,1);
         assertEquals(theTree.root.leftChild.key, 1);
         assertEquals(theTree.find(105).parent.key,104);//проверка предка у случайного узла
         assertEquals(theTree.find(104).leftChild.key,103);//проверка левого потомка  у случайного узла
