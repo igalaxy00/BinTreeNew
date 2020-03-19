@@ -19,6 +19,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertTrue(theTree.newElement(1));//проверка успешно ли добавляютя элементы
         theTree.newElement(-1);
         theTree.newElement(2);
+        assertEquals(theTree.parent(100),55);//проверка работы только метода parent
+        assertEquals(theTree.leftChild(1),-1);//проверка только метода leftChild
+        assertEquals(theTree.rightChild(1),2);//проверка только метода rightChild
         assertEquals(theTree.root.key, 55);//проверки связанные с корнем
         assertEquals(theTree.root.leftChild.key, 4);
         assertEquals(theTree.root.rightChild.key, 100);

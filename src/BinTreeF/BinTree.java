@@ -5,22 +5,21 @@ import java.util.*;
 
 public class BinTree {
 
-    public ArrayList<Node> nodes = new ArrayList<>();
-    public Node root= null;
+    public ArrayList<Node> nodes = new ArrayList<>(); // массив всех узлов которые сейчас есть в дереве
+    public Node root= null; //создание начального пустого корня
 
-    public Node find(int key) {
+    public Node find(int key) { //поиск элемента в дереве
         Node current;
             for (current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
                 if (current.key == key)
                     return current;
         throw new NullPointerException("Такого узла нет");
         }
-    public boolean isEmpty(){
+    public boolean isEmpty(){ //проверка на пустоту древа
         return root==null;
 }
 
-    //добавление элемента
-    public boolean newElement(int key) {
+    public boolean newElement(int key) {    //добавление элемента
         Node node = new Node();
         node.key = key;
         if (root == null) {// если корня нет и дерево ещё не создано
