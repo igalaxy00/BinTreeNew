@@ -1,4 +1,4 @@
-package main;
+package BinTreeF;
 
 public class Node {
     public int key; //ключ узла

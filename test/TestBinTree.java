@@ -1,4 +1,4 @@
-import main.BinTree;
+import BinTreeF.BinTree;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         theTree.newElement(103);
         theTree.newElement(105);
         theTree.newElement(4);
+        assertEquals(theTree.nodes.get(1).key,100);//проверка того как заполняется массив
         assertTrue(theTree.newElement(1));//проверка успешно ли добавляютя элементы
         assertEquals(theTree.root.key, 55);//проверки связанные с корнем
         assertEquals(theTree.root.leftChild.key, 4);

@@ -1,11 +1,11 @@
-package main;
+package BinTreeF;
 
 import java.util.*;
 
 
 public class BinTree {
 
-    private ArrayList<Node> nodes = new ArrayList<>();
+    public ArrayList<Node> nodes = new ArrayList<>();
     public Node root= null;
 
     public Node find(int key) {
@@ -25,6 +25,7 @@ public class BinTree {
         node.key = key;
         if (root == null) {
             root = node;
+            nodes.add(node);
         } else {
             Node current = root;
             Node previous;
