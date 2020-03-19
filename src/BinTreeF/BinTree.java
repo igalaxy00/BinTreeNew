@@ -8,7 +8,12 @@ public class BinTree {
     public ArrayList<Node> nodes = new ArrayList<>(); // массив всех узлов которые сейчас есть в дереве
     public Node root= null; //создание начального пустого корня
 
-    public Node find(int key) { //поиск элемента в дереве
+    /**
+     * метод ниже осуществляет поиск элемента в дереве
+     *@param key ключ узла который мы намереваемся найти
+     *@return узел который мы нашли или ошибку в случае если узла в дереве нет
+     */
+    public Node find(int key) {
         Node current;
             for (current=root; current != null; current=key < current.key ? current.leftChild : current.rightChild)
                 if (current.key == key)
@@ -18,8 +23,12 @@ public class BinTree {
     public boolean isEmpty(){ //проверка на пустоту древа
         return root==null;
 }
-
-    public boolean newElement(int key) {    //добавление элемента
+    /**
+     * метод ниже осуществляет добавление элемента в дереве
+     *@param key ключ узла который мы намереваемся создать
+     *@return успешноность выполнения доперации
+     */
+public boolean newElement(int key) {    //добавление элемента
         Node node = new Node();
         node.key = key;
         if (root == null) {// если корня нет и дерево ещё не создано
@@ -104,6 +113,10 @@ public class BinTree {
                 current1.rightChild = endLeft.rightChild;
             current1.key = endLeft.key;
         }
+    }
+    public void clearTree(){
+    while (root!= null)
+        removeElement(root.key);
     }
 
     @Override
