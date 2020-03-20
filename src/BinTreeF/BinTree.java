@@ -19,7 +19,7 @@ public class BinTree {
                 if (current.key == key)
                     return current;
         throw new NullPointerException("Такого узла нет");
-        }
+    }
     public boolean isEmpty(){ //проверка на пустоту древа
         return root==null;
 }
@@ -31,7 +31,7 @@ public class BinTree {
 public boolean newElement(int key) {    //добавление элемента
         Node node = new Node();
         node.key = key;
-        if (root == null) {// если корня нет и дерево ещё не создано
+        if (isEmpty()) {// если корня нет и дерево ещё не создано
             root = node;
             nodes.add(node);
         } else { // если корень есть то добавляем элемент
@@ -74,8 +74,8 @@ public boolean newElement(int key) {    //добавление элемента
     }
 
     public void removeElement (int k){
-        Node current1 = root;
         Node current2 = null;
+        Node current1 = root;
         while(current1 != null){
             int compared = Integer.compare(k, current1.key);
             if(compared == 0)
@@ -114,6 +114,11 @@ public boolean newElement(int key) {    //добавление элемента
             current1.key = endLeft.key;
         }
     }
+    //колличество узлов в древе
+    public int amountOfNodes(){
+        return nodes.size();
+    }
+
     public void clearTree(){
     while (root!= null)
         removeElement(root.key);

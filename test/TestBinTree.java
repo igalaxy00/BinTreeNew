@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertTrue(theTree.newElement(1));//проверка успешно ли добавляютя элементы
         theTree.newElement(-1);
         theTree.newElement(2);
+        assertEquals(theTree.amountOfNodes(),9);//проверка метода который считает кол во узлов в древе
         assertEquals(theTree.parent(100),55);//проверка работы только метода parent
         assertEquals(theTree.leftChild(1),-1);//проверка только метода leftChild
         assertEquals(theTree.rightChild(1),2);//проверка только метода rightChild
