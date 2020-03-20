@@ -23,6 +23,8 @@ public class BinTree {
     public boolean isEmpty(){ //проверка на пустоту древа
         return root==null;
 }
+
+
     /**
      * метод ниже осуществляет добавление элемента в дереве
      *@param key ключ узла который мы намереваемся создать
@@ -72,12 +74,16 @@ public boolean newElement(int key) {    //добавление элемента
     public int parent(int key) {
         return find(key).parent.key;
     }
-
-    public void removeElement (int k){
+    /**
+     * метод ниже осуществляет добавление элемента в дереве
+     *@param key ключ узла который мы намереваемся создать
+     */
+    public void removeElement (int key){
         Node current2 = null;
         Node current1 = root;
+        nodes.remove(find(key));
         while(current1 != null){
-            int compared = Integer.compare(k, current1.key);
+            int compared = Integer.compare(key, current1.key);
             if(compared == 0)
                 break;  //выход из цикла если найден элемент
              else {

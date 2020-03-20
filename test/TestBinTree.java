@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertTrue(theTree.newElement(1));//проверка успешно ли добавляютя элементы
         theTree.newElement(-1);
         theTree.newElement(2);
-        assertEquals(theTree.amountOfNodes(),9);//проверка метода который считает кол во узлов в древе
         assertEquals(theTree.parent(100),55);//проверка работы только метода parent
         assertEquals(theTree.leftChild(1),-1);//проверка только метода leftChild
         assertEquals(theTree.rightChild(1),2);//проверка только метода rightChild
@@ -30,7 +29,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertEquals(theTree.find(4).key,4);
         assertEquals(theTree.find(-1).parent.key,1);
         assertEquals(theTree.find(2).key,2);
+        assertEquals(theTree.amountOfNodes(),9);//проверка метода который считает кол во узлов в древе
         theTree.removeElement(4);//проверка на удаление элемента
+        assertEquals(theTree.amountOfNodes(),8);//проверка метода который считает кол во узлов в древе при удалении узла
         assertEquals(theTree.find(1).key,1);//проверка того что происходит с узлами, предка которых удалили
         assertEquals(theTree.find(1).leftChild.key,-1);//проверка что происходит с левым потомком узла, предка которых удалили
         assertEquals(theTree.find(1).rightChild.key,2);//проверка что происходит с правым потомком узла, предка которых удалили
