@@ -42,21 +42,21 @@ public boolean newElement(int key) {    //добавление элемента
             while (true) {
                 previous = current;
                 if (key < previous.key) {//если искомый ключ меньше текущего то идём влево
-                    current = current.leftChild;
-                    if (current == null) {
+                    if (current.leftChild == null) {
                         node.parent = previous;
                         previous.leftChild = node;
                         nodes.add(node);
                         return true;
                     }
+                    current = current.leftChild;
                 } else {//если искомый ключ больше текущего то идём вправо
-                    current = current.rightChild;
-                    if (current == null) {
+                    if (current.rightChild == null) {
                         node.parent = previous;
                         previous.rightChild = node;
                         nodes.add(node);
                         return true;
                     }
+                    current = current.rightChild;
                 }
             }
         }
