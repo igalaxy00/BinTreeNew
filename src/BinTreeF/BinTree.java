@@ -49,7 +49,7 @@ public boolean newElement(int key) {    //добавление элемента
                         nodes.add(node);
                         return true;
                     }
-                } else {//если искомый ключ меньше текущего то идём вправо
+                } else {//если искомый ключ больше текущего то идём вправо
                     current = current.rightChild;
                     if (current == null) {
                         previous.rightChild = node;
@@ -114,7 +114,6 @@ public boolean newElement(int key) {    //добавление элемента
             }
             if(current2 != null)
                 current2.leftChild = endLeft.rightChild;
-
              else
                 current1.rightChild = endLeft.rightChild;
             current1.key = endLeft.key;
