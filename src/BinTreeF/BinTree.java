@@ -35,7 +35,7 @@ public boolean newElement(int key) {    //добавление элемента
         node.key = key;
         if (isEmpty()) {// если корня нет и дерево ещё не создано
             root = node;
-            nodes.add(node);
+            nodes.add(root);
         } else { // если корень есть то добавляем элемент
             Node current = root;
             Node previous;
@@ -44,16 +44,16 @@ public boolean newElement(int key) {    //добавление элемента
                 if (key < previous.key) {//если искомый ключ меньше текущего то идём влево
                     current = current.leftChild;
                     if (current == null) {
-                        previous.leftChild = node;
                         node.parent = previous;
+                        previous.leftChild = node;
                         nodes.add(node);
                         return true;
                     }
                 } else {//если искомый ключ больше текущего то идём вправо
                     current = current.rightChild;
                     if (current == null) {
-                        previous.rightChild = node;
                         node.parent = previous;
+                        previous.rightChild = node;
                         nodes.add(node);
                         return true;
                     }
